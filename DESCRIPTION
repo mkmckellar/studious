@@ -18,3 +18,5 @@ Description: WORK IN PROGRESS. This package is for statistics students new to R,
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/mkmckellar/studious
+BugReports: https://github.com/mkmckellar/studious/issues
