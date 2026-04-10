@@ -1,0 +1,20 @@
+Package: studious
+Type: Package
+Title: studios
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Megan", "McKellar",
+      email = "mckellar.me@gmail.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: WORK IN PROGRESS. This package is for statistics students new to R, RStudio, 
+    and associated tools like Quarto and LaTeX. My aim is to help them learn
+    by throwing them into the deep end with touchable examples. This package will
+    contain code that will generate study guides, homework templates, and presentation
+    templates using Quarto documents.This package was born out of my reflections on my own learning journey as a masters 
+    student in statistics and inspired by many cool blog posts. 
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
