@@ -1,9 +1,21 @@
+# renv - ignore installed packages, not the lockfile
 renv/library/
 renv/staging/
+
+# R artifacts
 .Rproj.user
 .Rhistory
 .RData
+
+# auth tockens
 .httr-oauth
+
+# macOS
 .DS_Store
+
+# quarto
 .quarto
+_extensions/
+
+# personal scratch work
 scratch/
