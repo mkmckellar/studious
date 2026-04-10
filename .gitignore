@@ -6,3 +6,4 @@ renv/staging/
 .httr-oauth
 .DS_Store
 .quarto
+scratch/
