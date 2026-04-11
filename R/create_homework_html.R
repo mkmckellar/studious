@@ -76,7 +76,7 @@ create_homework_html <- function(file_name = NULL, your_name = NULL,
   # or tell them it was created.
   if(interactive() && rstudioapi::isAvailable()) {
     # User is in RStudio interactively -- open the file for them
-    rstudioapi::navigateToFile(paste0(file_name, ".qmd"))
+    invisible(rstudioapi::navigateToFile(paste0(file_name, ".qmd")))
   } else {
     # User is in a plain R terminal, or rendering a document
     # Just tell them where the file is instead
