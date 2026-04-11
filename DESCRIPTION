@@ -10,7 +10,7 @@ Authors@R: c(
     )
   )
 Description: WORK IN PROGRESS. This package is for statistics students new to R, RStudio, 
-    and associated tools like Quarto and LaTeX. My aim is to help them learn
+    and associated tools like Quarto. My aim is to help them learn
     by throwing them into the deep end with touchable examples. This package will
     contain code that will generate study guides, homework templates, and presentation
     templates using Quarto documents.This package was born out of my reflections on my own learning journey as a masters 
@@ -20,3 +20,5 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/mkmckellar/studious
 BugReports: https://github.com/mkmckellar/studious/issues
+Suggests: 
+    rstudioapi
