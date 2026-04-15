@@ -1,3 +1,29 @@
+#' Create a homework report as an HTML document
+#'
+#' Creates a Quarto homework template in the current working directory
+#' and opens it for editing. The template includes the student's name
+#' in the document header.
+#'
+#' @param file_name A character string specifying the name of the homework
+#'   file to create, without the .qmd extension. Use only letters, numbers,
+#'   underscores, and hyphens. Spaces will be automatically converted to
+#'   underscores.
+#' @param your_name A character string with the student's name to appear
+#'   in the document header. Defaults to "Your Name" if not provided.
+#'
+#' @return Called for its side effects. Creates a .qmd file in the current
+#'   working directory and opens it in RStudio if available.
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # Create a homework file with your name
+#' create_homework_html(file_name = "homework_1", your_name = "Statistics Student")
+#'
+#' # Create a homework file without specifying a name
+#' create_homework_html(file_name = "homework_1")
+#' }
 
 ## create homework html template ----
 
