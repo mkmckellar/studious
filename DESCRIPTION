@@ -15,7 +15,7 @@ Description: WORK IN PROGRESS. This package is for statistics students new to R,
     contain code that will generate study guides, homework templates, and presentation
     templates using Quarto documents.This package was born out of my reflections on my own learning journey as a masters 
     student in statistics and inspired by many cool blog posts. 
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/mkmckellar/studious
