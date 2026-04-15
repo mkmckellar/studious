@@ -3,8 +3,7 @@
 
 
 # this code was adapted from meghan hall's blog post
-create_homework_html <- function(file_name = NULL, your_name = NULL,
-                                 ext_name = "hw-html") {
+create_homework_html <- function(file_name = NULL, your_name = NULL) {
 
   # check for your_name value
   if(is.null(your_name)) {
@@ -31,8 +30,6 @@ create_homework_html <- function(file_name = NULL, your_name = NULL,
          "Please choose a different file_name.")
   }
 
-  # check for available extensions
-  stopifnot("Extension not in package" = ext_name %in% c("hw-html"))
 
   # check for existing _extensions directory
   if(!file.exists("_extensions")) {
@@ -41,13 +38,13 @@ create_homework_html <- function(file_name = NULL, your_name = NULL,
   }
 
   # create folder
-  if(!file.exists(paste0("_extensions/", ext_name))) {
-    dir.create(paste0("_extensions/", ext_name))
+  if(!file.exists("_extensions/hw-html")) {
+    dir.create("_extensions/hw-html")
   }
 
   # copy from internals, packaged referenced is this package -- studious!
   file.copy(
-    from = system.file(paste0("extdata/_extensions/", ext_name), package = "studious"),
+    from = system.file("extdata/_extensions/hw-html", package = "studious"),
     to = paste0("_extensions/"),
     overwrite = TRUE,
     recursive = TRUE,
@@ -55,10 +52,10 @@ create_homework_html <- function(file_name = NULL, your_name = NULL,
   )
 
   # logic check to make sure extension files were moved
-  n_files <- length(dir(paste0("_extensions/", ext_name)))
+  n_files <- length(dir("_extensions/hw-html"))
 
   if(n_files >= 2){
-    message(paste(ext_name, "was installed to _extensions folder in current working directory."))
+    message("hw-html was installed to _extensions folder in current working directory.")
   } else {
     message("Extension appears not to have been created")
   }
@@ -84,3 +81,4 @@ create_homework_html <- function(file_name = NULL, your_name = NULL,
   }
 
 }
+
