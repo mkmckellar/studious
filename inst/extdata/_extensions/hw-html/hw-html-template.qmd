@@ -2,15 +2,15 @@
 title: "Homework template"
 subtitle: "class and assignment"
 author: "YOUR_NAME_HERE"
-description: "`r format(Sys.time(), '%F')`"
-title-block-banner: "#d2d2d2"
+date: "`r format(Sys.time(), '%F')`"
 format: 
   html:
-      linkcolor: "#086C35"
+      linkcolor: "#0000EE"
       toc: true
       toc-title: "Problems and Exercises"
       embed-resources: true
-      theme: cosmo
+      theme: 
+        - THEME_FILE_HERE
       link-external-newwindow: true
 ---
 
@@ -18,11 +18,11 @@ format:
 
 Describe the problem set here
 
-### Answer 1
+## Answer 1
 
-Answer the question here. 
+Answer the question here.
 
-Write up your code if necessary. 
+Write up your code if necessary.
 
 ```{r}
 #| label: answer 1
@@ -31,30 +31,37 @@ Write up your code if necessary.
 
 ```
 
-
 # Question 2
 
-Describe question 2 here. 
+Describe question 2 here.
 
 ## Part A
 
-This is a 2 part question. This is the first part. 
+This is a 2 part question. This is the first part.
 
 ## Answer 2 A
 
-Here is the answer to part A. 
+Here is the answer to part A. $\beta$ and $\Omega$
 
 ## Part B
 
-Here is the second part of the question. 
+Here is the second part of the question.
 
 ## Answer 2 B
 
-Here is the anser to part B. 
+Here is the answer to part B.
 
 ```{r}
-#| label: ansewr 2b
+#| label: answer 2b
 
-2 + 2
+set.seed(101)
+
+x <- rnorm(100, mean = 5, sd = 2)
+
+avg_x <- mean(x) |> round(1)
+
+sd_x <- sd(x) |> round(1)
+
+print(paste0("The mean of x is ", avg_x, " and the standard deviation of x is ", sd_x, "."))
+
 ```
-
