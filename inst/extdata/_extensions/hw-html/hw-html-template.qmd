@@ -5,12 +5,13 @@ author: "YOUR_NAME_HERE"
 date: "`r format(Sys.time(), '%F')`"
 format: 
   html:
+      theme: 
+        - cosmo
+        - _extensions/hw-html/THEME_FILE_HERE
       linkcolor: "#0000EE"
       toc: true
       toc-title: "Problems and Exercises"
       embed-resources: true
-      theme: 
-        - THEME_FILE_HERE
       link-external-newwindow: true
 ---
 
@@ -21,6 +22,11 @@ Describe the problem set here
 ## Answer 1
 
 Answer the question here.
+
+| Model | Variable $\beta_0$ | Coefficient $\beta_1$ |
+|-------|--------------------|-----------------------|
+| A     | 1.5                | 1.9                   |
+| B     | 1.1                | 1.7                   |
 
 Write up your code if necessary.
 
@@ -41,7 +47,13 @@ This is a 2 part question. This is the first part.
 
 ## Answer 2 A
 
-Here is the answer to part A. $\beta$ and $\Omega$
+Here is the answer to part A.
+
+$$
+x \sim B(n,p) \\
+n \in \{0, 1, 2, 3, ...\} \\
+p \in [0, 1]
+$$
 
 ## Part B
 

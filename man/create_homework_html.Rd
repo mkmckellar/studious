@@ -4,7 +4,7 @@
 \alias{create_homework_html}
 \title{Create a homework report as an HTML document}
 \usage{
-create_homework_html(file_name = NULL, your_name = NULL)
+create_homework_html(file_name = NULL, your_name = NULL, spirit = NULL)
 }
 \arguments{
 \item{file_name}{A character string specifying the name of the homework
@@ -14,6 +14,11 @@ underscores.}
 
 \item{your_name}{A character string with the student's name to appear
 in the document header. Defaults to "Your Name" if not provided.}
+
+\item{spirit}{An optional character string specifying the school spirit theme
+which will alter the style of the homework template. Currently
+supports \code{"pioneers"} (CSU East Bay) and \code{"aggies"} (UC Davis).
+Defaults to NULL for the neutral theme.}
 }
 \value{
 Called for its side effects. Creates a .qmd file in the current

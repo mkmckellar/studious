@@ -11,6 +11,11 @@
 #' @param your_name A character string with the student's name to appear
 #'   in the document header. Defaults to "Your Name" if not provided.
 #'
+#' @param spirit An optional character string specifying the school spirit theme
+#'   which will alter the style of the homework template. Currently
+#'   supports \code{"pioneers"} (CSU East Bay) and \code{"aggies"} (UC Davis).
+#'   Defaults to NULL for the neutral theme.
+#'
 #' @return Called for its side effects. Creates a .qmd file in the current
 #'   working directory and opens it in RStudio if available.
 #'
@@ -29,7 +34,9 @@
 
 
 # this code was adapted from meghan hall's blog post
-create_homework_html <- function(file_name = NULL, your_name = NULL) {
+create_homework_html <- function(file_name = NULL,
+                                 your_name = NULL,
+                                 spirit = NULL) {
 
   # check for your_name value
   if(is.null(your_name)) {
@@ -56,6 +63,22 @@ create_homework_html <- function(file_name = NULL, your_name = NULL) {
          "Please choose a different file_name.")
   }
 
+  # define supported spirit themes
+  supported_spirits <- c("aggies", "pioneers")
+
+  # validate spirit argument if provided
+  if(!is.null(spirit) && !spirit %in% supported_spirits) {
+    stop("spirit must be one of: ",
+         paste(supported_spirits, collapse = ", "),
+         ". Or NULL for the default theme")
+  }
+
+  # resolve theme files
+  if(is.null(spirit)) {
+    theme_file <- "theme.scss"
+  } else {
+    theme_file <- paste0("theme-", spirit, ".scss")
+  }
 
   # check for existing _extensions directory
   if(!file.exists("_extensions")) {
@@ -91,6 +114,9 @@ create_homework_html <- function(file_name = NULL, your_name = NULL) {
 
   # inject the student's name
   template <- gsub("YOUR_NAME_HERE", your_name, template)
+
+  # inject spirit theme
+  template <- gsub("THEME_FILE_HERE", theme_file, template)
 
   # write the modified version to the new file_name.qmd
   writeLines(template, paste0(file_name, ".qmd"))
